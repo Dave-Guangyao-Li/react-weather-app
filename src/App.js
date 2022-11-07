@@ -44,6 +44,7 @@ function App() {
 
   return (
     <div className="container">
+      <h1 className='app-name'>React Weather Forecast Group 7</h1>
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
       {forecast && <Forecast data={forecast} />}

@@ -15,7 +15,7 @@ const Forecast = ({ data }) => {
     // const forecastDays = WEEK_DAYS.slice(dayInWeek, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, dayInWeek));
     return (
         <>
-            <label className="title">Every 3 hours Forecast in Future 5 days</label>
+            <div className="title">Every 3 hours Forecast in Future 5 days (click for details)</div>
             <Accordion allowZeroExpanded>
                 {data.list.map((item, idx) => (
                     <AccordionItem key={idx}>

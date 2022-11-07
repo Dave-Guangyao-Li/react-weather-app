@@ -2,3 +2,11 @@
   max-width: 1080px;
   margin: 200px auto;
 }
+
+.app-name {
+  font-size: 40px;
+  font-weight: 600;
+  margin: 20px 0;
+  padding: 0;
+  text-align: center;
+}

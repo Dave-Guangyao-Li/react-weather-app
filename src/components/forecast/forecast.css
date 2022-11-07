@@ -1,6 +1,8 @@
 .title {
-    font-size: 23px;
-    font-weight: 700;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-align: center;
 }
 
 .daily-item {
