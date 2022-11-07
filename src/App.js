@@ -16,14 +16,18 @@ function App() {
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(''); // get lat and lon from search input data
 
+    // get current weather data from openweather API
     const currentWeatherFetch = fetch(
       // API call https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
       `${WEATHER_API_URL}weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
     );
 
+    // get forecast data from openweather API
     const forecastFetch = fetch(
       `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
     );
+
+    // get data from both fetches
 
     Promise.all([currentWeatherFetch, forecastFetch])
       .then(async (response) => {

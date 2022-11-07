@@ -8,7 +8,7 @@ const Search = ({ onSearchChange }) => {
 	// get major cities options data
 	// see documentation: https://rapidapi.com/wft-geo-db/api/wft-geo-db
 	const loadOptions = (inputValue) => {
-		return fetch(`${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`
+		return fetch(`${GEO_API_URL}/cities?minPopulation=100000&namePrefix=${inputValue}`
 			, geoApiOptions)
 			.then((response) => response.json())
 			.then((response) => {
@@ -36,7 +36,7 @@ const Search = ({ onSearchChange }) => {
 	return (
 		<AsyncPaginate // AsyncPaginate is a wrapper for react-select menu
 			placeholder="Search for a city" // placeholder for search input
-			debounceTimeout={300}
+			debounceTimeout={600}
 			value={search}
 			loadOptions={loadOptions} // shows options
 			onChange={handleOnChange}

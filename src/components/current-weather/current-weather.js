@@ -5,7 +5,7 @@ import React from "react";
 const CurrentWeather = ({ data }) => {
 
     function getCurrentDate(timeStamp) {
-        const date = new Date(timeStamp);
+        const date = new Date(timeStamp * 1000);
         const day = date.getDate();
         const month = date.getMonth() + 1;
         const year = date.getFullYear();
@@ -21,8 +21,7 @@ const CurrentWeather = ({ data }) => {
                 </div>
 
                 <div>
-                    <p className="date">{getCurrentDate(data.dt * 1000)}</p>
-                    {/* <p className="date">{Date.now()}</p> */}
+                    <p className="date">{getCurrentDate(data.dt)}</p>
                 </div>
 
                 <img
@@ -31,7 +30,7 @@ const CurrentWeather = ({ data }) => {
                     src={`icons/${data.weather[0].icon}.png`}
                 />
 
-            </div>
+            </div >
             <div className="bottom">
                 <p className="temperature">{Math.round(data.main.temp)}°C</p>
                 <div className="details">
@@ -58,7 +57,7 @@ const CurrentWeather = ({ data }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
