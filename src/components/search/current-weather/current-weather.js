@@ -1,2 +1,0 @@
-import './current-weather.css';
-
